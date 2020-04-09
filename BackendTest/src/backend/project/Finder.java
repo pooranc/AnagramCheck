@@ -3,6 +3,15 @@ package backend.project;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * The Finder program which takes a single String array as a argument and
+ * implments a find method which would take single string argument as a key to
+ * check the key is an anagram with all the String elements in String array.
+ * this return list of string which is a anagram with a key argument.
+ * 
+ * @author pooran.c
+ *
+ */
 public class Finder {
 
 	public String[] thisIsAStringArray;
@@ -21,6 +30,10 @@ public class Finder {
 	 *         not.
 	 */
 	public String anagramEfficiet(String word, String key) {
+		// if the key passed is null, return null
+		if (key == null) {
+			return null;
+		}
 
 		// return null if the size of the two strings is not equal
 		if (word.length() != key.length()) {
@@ -55,6 +68,10 @@ public class Finder {
 	 *         not.
 	 */
 	public String anagramCheck(String word, String key) {
+		// if the key passed is null, return null
+		if (key == null) {
+			return null;
+		}
 		// Converting each input to char Array
 		char[] first = word.toCharArray();
 		char[] second = key.toCharArray();
@@ -90,18 +107,22 @@ public class Finder {
 
 	public static void main(String[] args) {
 
-		/*
-		 * String[] thisIsAStringArray = new String[5]; thisIsAStringArray[0] = "asd";
-		 * thisIsAStringArray[1] = "dsas"; thisIsAStringArray[2] = "dsa";
-		 * thisIsAStringArray[3] = "glk"; thisIsAStringArray[4] = "lkm"; Finder finder =
-		 * new Finder(thisIsAStringArray);
-		 * 
-		 * ArrayList<String> resOutput = finder.find("sad"); if (resOutput != null &&
-		 * resOutput.size() != 0) { System.out.println(resOutput); } else { System.out.
-		 * println("String of arrays doesnot contain any anagrams of the input");
-		 * 
-		 * }
-		 */
+//		String[] thisIsAStringArray = new String[] { "asd", "dsas", "asdfa"};
+//		Finder finder = new Finder(thisIsAStringArray);
+//
+//		ArrayList<String> expected = new ArrayList<String>();
+////		expected.add("eat");
+////		expected.add("tea");
+//
+//
+//		ArrayList<String> resOutput = finder.find(null);
+//		if (resOutput != null && resOutput.size() != 0) {
+//			System.out.println(resOutput);
+//		} else {
+//			System.out.println("String of arrays doesnot contain any anagrams of the input");
+//
+//		}
+
 	}
 
 }

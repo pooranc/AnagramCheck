@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Test;
 
 class FinderTest {
 
+	/**
+	 * simple test
+	 */
 	@Test
 	void test1() {
 		String[] thisIsAStringArray = new String[5];
@@ -23,21 +26,33 @@ class FinderTest {
 		expected.add("dsa");
 		expected.add("dsa");
 		
-		assertEquals(expected, finder.find("sad"), "test1 succesful");
+		assertEquals(expected, finder.find("sad"), "simple test -> succesful");
 		
 	}
 	
+	/**
+	 * Test to check for same character different times
+	 */
 	@Test
 	void test2() {
-		String[] thisIsAStringArray = new String[] {"eat", "tea", "cat"};
+		String[] thisIsAStringArray = new String[] {"dddd", "dddddd", "d"};
 		Finder finder = new Finder(thisIsAStringArray);
 		
 		ArrayList<String> expected = new ArrayList<String>();
-		expected.add("eat");
-		expected.add("tea");
-		assertEquals(expected, finder.find("eta"), "test2 succesful");
+		assertEquals(expected, finder.find("dd"), "Array containing a same charater different time -> succesful");
 	}
 
+	/**
+	 * Passing Null String as a key
+	 */
+	@Test
+	void test3() {
+		String[] thisIsAStringArray = new String[] {"asd", "cat", "apple"};
+		Finder finder = new Finder(thisIsAStringArray);
+		
+		ArrayList<String> expected = new ArrayList<String>();
+		assertEquals(expected, finder.find(null), "Null as a key string -> succesful");
+	}
 
 
 }
